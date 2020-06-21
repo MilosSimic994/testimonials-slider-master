@@ -1,0 +1,102 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  position: relative;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .img-curve {
+  width: 45vw;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -5;
+}
+
+.container .img-bg {
+  width: 45vw;
+  position: absolute;
+  right: 70px;
+  top: 50px;
+  z-index: -5;
+}
+
+.container .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 70vw;
+  position: relative;
+}
+
+.container .card .img-quotes {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  z-index: -5;
+}
+
+.container .card .description {
+  font-size: 3rem;
+}
+
+.container .card .prof-pic {
+  height: 40rem;
+  width: 40rem;
+  position: relative;
+  z-index: -2;
+}
+
+.container .card .job-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+
+.container .card .job-title h4 {
+  padding-right: 1rem;
+}
+
+.container .card .next-prev {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: white;
+  -webkit-box-shadow: grey 5px 10px 5px;
+          box-shadow: grey 5px 10px 5px;
+  width: 6rem;
+  height: 3rem;
+  position: absolute;
+  bottom: -20px;
+  right: 350px;
+  z-index: 9;
+  border-radius: 20px;
+}
+/*# sourceMappingURL=style.css.map */

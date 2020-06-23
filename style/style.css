@@ -99,4 +99,14 @@
   z-index: 9;
   border-radius: 20px;
 }
+
+@media (max-width: 375px) {
+  .card {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background: greenyellow;
+  }
+}
 /*# sourceMappingURL=style.css.map */

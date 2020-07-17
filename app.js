@@ -24,15 +24,27 @@ const fullName = document.querySelector('#name')
 const job = document.querySelector('#job')
 const img = document.querySelector('.prof-pic')
 
+let curentitem = 0;
+
 next.addEventListener('click', ()=>{
-    description.textContent = person[1].desc
-    fullName.textContent = person[1].name
-    job.textContent = person[1].job
-    img.src = person[1].avatar
+   curentitem++;
+   if(curentitem >= person.length){
+       curentitem = 0
+   }
+   showPerson();
 })
 prev.addEventListener('click', ()=>{
-    description.textContent = person[0].desc
-    fullName.textContent = person[0].name
-    job.textContent = person[0].job
-    img.src = person[0].avatar
+  curentitem--;
+  if(curentitem < 0 ){
+      curentitem = person.length -1
+  }
+  showPerson()
 })
+
+
+function showPerson() {
+    description.textContent = person[curentitem].desc
+    fullName.textContent = person[curentitem].name
+    job.textContent = person[curentitem].job
+    img.src = person[curentitem].avatar
+}

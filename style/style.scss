@@ -1,79 +1,196 @@
+@mixin medium {
+  @media (max-width: 1440px) {
+    @content;
+  }
+}
+@mixin small {
+  @media (max-width: 1120px) {
+    @content;
+  }
+}
+@mixin tab {
+  @media (max-width: 900px) {
+    @content;
+  }
+}
+@mixin mob {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 .container {
-    position: relative;
-    height: 100vh;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .img-curve {
+    width: 45vw;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -5;
+  }
+  .img-bg {
+    width: 45vw;
+    height: 50rem;
+    position: absolute;
+    right: 70px;
+    bottom: 90px;
+    z-index: -5;
+    @include medium {
+      width: 40rem;
+      height: 40rem;
+      bottom: 150px;
+    }
+    @include small {
+      width: 25rem;
+      height: 28rem;
+      bottom: 260px;
+    }
+    @include tab {
+      width: 25rem;
+      height: 22rem;
+      bottom: 500px;
+      right: 50%;
+      transform: translateX(50%);
+    }
+    @include mob {
+      width: 18rem;
+      height: 18rem;
+      bottom: 400px;
+      right: 50%;
+      transform: translateX(50%);
+    }
+  }
+  .card {
     display: flex;
-    justify-content: center;
     align-items: center;
-    .img-curve {
-        width: 45vw;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        z-index: -5;
-    }
-    .img-bg {
-        width: 45vw;
-        position: absolute;
-        right: 70px;
-        top: 50px;
-        z-index: -5;
-    }
-    .card {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 70vw;
-        position: relative;
+    justify-content: center;
+    width: 75vw;
+    position: relative;
 
-        .img-quotes {
-            position: absolute;
-            top: 20px;
-            left: 0;
-            z-index: -5;
-        }
-        .description {
-            font-size: 3rem;
-        }
-        .prof-pic {
-            height: 40rem;
-            width: 40rem;
-            position: relative;
-            z-index: -2;
-        }
-        .job-title {
-            display: flex;
-            font-size: 1.5rem;
-            margin-top: 2rem;
-            
-            h4 {
-                padding-right: 1rem;
-            }
-        }
-        .next-prev {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            background:  hsl(0, 0%, 100%);
-            box-shadow: grey 5px 10px 5px;
-            width: 6rem;
-            height: 3rem;
-            position: absolute;
-            bottom: -20px;
-            right: 350px;
-            z-index: 9;
-            border-radius: 20px;
-        }
+    @include tab {
+      flex-direction: column-reverse;
+      justify-content: space-evenly;
+      height: 100vh;
     }
-}
 
-@media(max-width: 375px) {
-    .card {
+    .img-quotes {
+      position: absolute;
+      top: 15%;
+      left: 0;
+      z-index: -5;
+      @include medium() {
+        top: 10%;
+      }
+      @include small {
+        top: 0;
+      }
+      @include tab {
+        top: 55%;
+        left: 40%;
+      }
+      @include mob {
+        top: 53%;
+        left: 40%;
+        width: 7rem;
+        height: 7rem;
+      }
+    }
+    .description {
+      font-size: 2.5rem;
+      padding-right: 2rem;
+
+      @include medium {
+        font-size: 2.2rem;
+      }
+      @include small {
+        font-size: 1.8rem;
+      }
+      @include tab {
+        padding-right: 0;
+      }
+      @include mob {
+        font-size: 1.3rem;
+        text-align: center;
+      }
+    }
+    .prof-pic {
+      height: 40rem;
+      width: 40rem;
+      position: relative;
+      z-index: -2;
+
+      @include medium {
+        height: 30rem;
+      }
+      @include small {
+        width: 22rem;
+        height: 22rem;
+      }
+      @include tab {
+        width: 18rem;
+        height: 18rem;
+      }
+      @include mob {
+        width: 14rem;
+        height: 14rem;
+      }
+    }
+
+    .job-title {
+      display: flex;
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      @include small {
+        font-size: 1.2rem;
+      }
+      @include tab {
         flex-direction: column;
-        background: greenyellow;
+        align-items: center;
+        text-align: center;
+      }
+
+      h4 {
+        padding-right: 1rem;
+        @include tab {
+          padding: 0;
+        }
+      }
     }
+    .next-prev {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background: hsl(0, 0%, 100%);
+      box-shadow: grey 3px 5px 5px;
+      width: 6rem;
+      height: 3rem;
+      position: absolute;
+      bottom: -20px;
+      right: 350px;
+      z-index: 9;
+      border-radius: 20px;
+
+      @include small {
+        right: 220px;
+      }
+      @include tab {
+        right: 50%;
+        bottom: 52%;
+      }
+      @include mob {
+        right: 50%;
+        transform: translateX(50%);
+        bottom: 54%;
+      }
+    }
+  }
 }
